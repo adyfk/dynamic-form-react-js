@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { useEffectOnce } from 'react-use';
 import { Container, Dropdown, Input } from './input';
 
 // Base validator
@@ -122,7 +121,7 @@ function Form({ formFields }) {
     setErrors(errors);
   };
 
-  useEffectOnce(() => {
+  useEffect(() => {
     validator.current = {};
     overrider.current = {};
 
@@ -132,7 +131,7 @@ function Form({ formFields }) {
       if (!assign) return;
       overrider.current[fieldName] = assign;
     });
-  });
+  }, []);
 
   useEffect(() => {
     if (!validator.current) return;
