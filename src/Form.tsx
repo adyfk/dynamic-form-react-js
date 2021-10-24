@@ -183,6 +183,12 @@ function Form({ formFields }) {
           return null;
         }
       )}
+      <br />
+      <br />
+      <br />
+      <br />
+      <div>value</div>
+      <pre>{JSON.stringify(values, null, 2)}</pre>
     </div>
   );
 }
